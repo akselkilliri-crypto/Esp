@@ -15,9 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install ESP-IDF
+      - name: Install ESP-IDF (v5.1.2)
         run: |
-          git clone --recursive https://github.com/espressif/esp-idf.git
+          git clone --recursive -b v5.1.2 https://github.com/espressif/esp-idf.git
           cd esp-idf
           ./install.sh
           echo "IDF_PATH=$GITHUB_WORKSPACE/esp-idf" >> $GITHUB_ENV
